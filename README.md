@@ -36,6 +36,5 @@ kubectl create secret tls letsencrypt \
   --key ./shubhamtatvamasi.com.key \
   --cert ./fullchain.cer
 ```
----
 
 
