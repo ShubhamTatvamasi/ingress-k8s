@@ -19,5 +19,14 @@ install nginx-ingress
 ```bash
 helm install nginx-ingress nginx-stable/nginx-ingress -n nginx-ingress
 ```
+---
+
+add certificate to kubernetes secret
+```bash
+kubectl create secret tls letsencrypt \
+  --key ./shubhamtatvamasi.com.key \
+  --cert ./fullchain.cer
+```
+---
 
 
