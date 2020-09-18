@@ -22,7 +22,11 @@ helm fetch --untar nginx-stable/nginx-ingress
 
 install nginx-ingress
 ```bash
-helm install nginx-ingress nginx-stable/nginx-ingress -n nginx-ingress
+helm install nginx-ingress nginx-stable/nginx-ingress \
+  -n nginx-ingress \
+  --set controller.service.type=NodePort \
+  --set controller.service.httpPort.nodePort=30080 \
+  --set controller.service.httpsPort.nodePort=30443
 ```
 ---
 
