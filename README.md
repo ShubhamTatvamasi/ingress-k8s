@@ -15,6 +15,11 @@ create namespace
 kubectl create namespace nginx-ingress
 ```
 
+download helm chart
+```bash
+helm fetch --untar nginx-ingress
+```
+
 install nginx-ingress
 ```bash
 helm install nginx-ingress nginx-stable/nginx-ingress -n nginx-ingress
