@@ -45,9 +45,9 @@ kubectl delete namespace nginx-ingress
 add certificate to kubernetes secret
 ```bash
 kubectl create secret tls letsencrypt \
-  -n nginx-ingress \
   --key ./shubhamtatvamasi.com.key \
-  --cert ./fullchain.cer
+  --cert ./fullchain.cer \
+  -n nginx-ingress
 ```
 
 
