@@ -20,9 +20,15 @@ download helm chart
 helm fetch --untar nginx-stable/nginx-ingress
 ```
 
+List all versions
+```bash
+helm search repo nginx-stable/nginx-ingress -l
+```
+
 install nginx-ingress
 ```bash
 helm install nginx-ingress nginx-stable/nginx-ingress \
+  --version 0.5.2 \
   -n nginx-ingress \
   --set controller.service.type=NodePort \
   --set controller.service.httpPort.nodePort=30080 \
