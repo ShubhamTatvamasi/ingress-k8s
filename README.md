@@ -28,6 +28,11 @@ helm install nginx-ingress nginx-stable/nginx-ingress \
   --set controller.service.httpPort.nodePort=30080 \
   --set controller.service.httpsPort.nodePort=30443
 ```
+
+delete deployment
+```bash
+kubectl delete namespace nginx-ingress
+```
 ---
 
 add certificate to kubernetes secret
