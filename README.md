@@ -26,7 +26,8 @@ helm install nginx-ingress nginx-stable/nginx-ingress \
   -n nginx-ingress \
   --set controller.service.type=NodePort \
   --set controller.service.httpPort.nodePort=30080 \
-  --set controller.service.httpsPort.nodePort=30443
+  --set controller.service.httpsPort.nodePort=30443 \
+  --set controller.defaultTLS.secret=nginx-ingress/letsencrypt
 ```
 
 delete deployment
@@ -38,6 +39,7 @@ kubectl delete namespace nginx-ingress
 add certificate to kubernetes secret
 ```bash
 kubectl create secret tls letsencrypt \
+  -n nginx-ingress \
   --key ./shubhamtatvamasi.com.key \
   --cert ./fullchain.cer
 ```
