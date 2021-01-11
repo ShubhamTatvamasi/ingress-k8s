@@ -29,6 +29,7 @@ Install with LoadBalancer:
 ```bash
 helm install nginx-ingress nginx-stable/nginx-ingress \
   --version=0.6.1 \
+  -n nginx-ingress \
   --set controller.defaultTLS.secret=nginx-ingress/letsencrypt
 ```
 
