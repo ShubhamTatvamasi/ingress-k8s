@@ -25,6 +25,13 @@ List all versions
 helm search repo nginx-stable/nginx-ingress -l
 ```
 
+Install with LoadBalancer:
+```bash
+helm install nginx-ingress nginx-stable/nginx-ingress \
+  --version=0.6.1 \
+  --set controller.defaultTLS.secret=nginx-ingress/letsencrypt
+```
+
 install nginx-ingress
 ```bash
 helm install nginx-ingress nginx-stable/nginx-ingress \
