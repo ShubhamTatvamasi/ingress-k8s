@@ -3,16 +3,16 @@
 add nginx repo
 ```bash
 helm repo add nginx-stable https://helm.nginx.com/stable
-```
-
-update helm repo
-```bash
 helm repo update
 ```
 
-create namespace
+Install Ingress Controller with LoadBalancer:
 ```bash
 kubectl create namespace nginx-ingress
+
+helm install nginx-ingress nginx-stable/nginx-ingress \
+  --namespace nginx-ingress \
+  --version=0.6.1
 ```
 
 download helm chart
@@ -23,14 +23,6 @@ helm fetch --untar nginx-stable/nginx-ingress
 List all versions
 ```bash
 helm search repo nginx-stable/nginx-ingress -l
-```
-
-Install with LoadBalancer:
-```bash
-helm install nginx-ingress nginx-stable/nginx-ingress \
-  --version=0.6.1 \
-  -n nginx-ingress \
-  --set controller.defaultTLS.secret=nginx-ingress/letsencrypt
 ```
 
 install nginx-ingress
@@ -57,5 +49,3 @@ kubectl create secret tls letsencrypt \
   --cert ./fullchain.cer \
   -n nginx-ingress
 ```
-
-
