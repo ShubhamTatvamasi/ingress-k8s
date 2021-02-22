@@ -8,9 +8,8 @@ helm repo update
 
 Install Ingress Controller with LoadBalancer:
 ```bash
-kubectl create namespace nginx-ingress
-
 helm install nginx-ingress nginx-stable/nginx-ingress \
+  --create-namespace \
   --namespace nginx-ingress \
   --version=0.6.1
 ```
