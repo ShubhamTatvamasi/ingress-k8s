@@ -11,6 +11,8 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
   --namespace ingress-nginx
 ```
 
+---
+
 add nginx repo
 ```bash
 helm repo add nginx-stable https://helm.nginx.com/stable
