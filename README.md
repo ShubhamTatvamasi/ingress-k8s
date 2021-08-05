@@ -10,8 +10,9 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
   --create-namespace \
   --namespace ingress-nginx
 ```
-
 ---
+
+### OLD
 
 add nginx repo
 ```bash
