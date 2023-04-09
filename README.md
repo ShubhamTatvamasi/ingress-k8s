@@ -8,7 +8,8 @@ helm repo update
 
 helm install ingress-nginx ingress-nginx/ingress-nginx \
   --create-namespace \
-  --namespace ingress-nginx
+  --namespace ingress-nginx \
+  --set controller.ingressClassResource.default=true
 ```
 ---
 
