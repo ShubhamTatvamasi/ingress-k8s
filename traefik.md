@@ -1,12 +1,10 @@
 # traefik
 
-Add helm repo:
-```bash
-helm repo add traefik https://traefik.github.io/charts
-```
 
+Install traefik Ingress Controller:
 ```bash
-helm upgrade -i traefik traefik/traefik \
+helm upgrade -i traefik \
+  oci://ghcr.io/traefik/helm/traefik \
   --version 40.0.0-rc.2 \
   --create-namespace \
   --namespace ingress-nginx \
