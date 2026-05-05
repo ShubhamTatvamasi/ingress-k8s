@@ -5,7 +5,7 @@ Install traefik Ingress Controller:
 ```bash
 helm upgrade -i traefik \
   oci://ghcr.io/traefik/helm/traefik \
-  --version 40.0.0-rc.2 \
+  --version 39.0.9 \
   --create-namespace \
   --namespace traefik
 ```
