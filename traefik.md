@@ -7,6 +7,7 @@ helm upgrade -i traefik \
   oci://ghcr.io/traefik/helm/traefik \
   --version 40.0.0 \
   --create-namespace \
-  --namespace traefik
+  --namespace traefik \
+  --set="additionalArguments={--serversTransport.insecureSkipVerify=true}"
 ```
 > Old k8s `39.0.9`
